@@ -1,0 +1,29 @@
+<div class = "jumbotron">
+    <h1>Savage Worlds Character Creator</h1>
+    <p>Welcome to the app</p>
+</div>
+
+{{#each characters}}
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          {{name}}
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <ul>
+          <li>Parry: {{parry}}</li>
+          <li>Toughness: {{toughness}}</li>
+          <li>Skills: {{skills}}</li>
+          <li>Wounds: {{wounds}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}
