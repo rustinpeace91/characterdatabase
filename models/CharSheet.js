@@ -18,9 +18,12 @@ var CharSheetSchema = new Schema({
     skills:{
         type: Array
     },
-    wounds:{
-        type: Number
-    }
+    weapons:{
+        type: Array
+    },
+    other:{
+        type: String
+    },
 
 });
 

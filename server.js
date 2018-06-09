@@ -24,9 +24,10 @@ mongoose.connect("mongodb://localhost/savageworldsdb", function(error){
     }
 });
 
-//MODELS
 
-
+//***************************************************************************************************
+// ROUTES
+//***************************************************************************************************
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -35,27 +36,21 @@ app.use(express.static(__dirname + '/public'));
 
 app.post("/submit", function(req, res) {
     // Create a new Book in the database
-    db.CharSheet.create({
-      "name" : "Aridan Smaffbaan",
-      "parry" : 8,
-      "toughness" : 4,
-      "skills" : ["shooting D8", "intimidate D4"],
-      "wounds" : 3
-    })
-      .then(function(dbBook) {
+    db.CharSheet.create(req.body)
+      .then(function(character) {
         // If a Book was created successfully, find one library (there's only one) and push the new Book's _id to the Library's `books` array
         // { new: true } tells the query that we want it to return the updated Library -- it returns the original by default
         // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
       })
-      .then(function(dbLibrary) {
+      .then(function(dcharacter) {
         // If the Library was updated successfully, send it back to the client
-        res.json(dbLibrary);
+        res.json(dcharacter);
       })
       .catch(function(err) {
         // If an error occurs, send it back to the client
         res.json(err);
       });
-  });
+});
   
 
 // Route for getting all books from the db
@@ -89,6 +84,9 @@ app.get("/" , function(req,res){
     });
 
 });
+
+//  END ROUTES
+
 
 app.get("/form" , function(req,res){
     res.render("form")

@@ -1,8 +1,36 @@
-<form action="/submit" method="post">
+<form id = "character-form" action="/submit" method="post">
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label for="exampleInputEmail1">Character Name:</label>
+        <input type="text" class="form-control" name = "name" id="characterName"  placeholder="Enter Character's name">
     </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Character Parry:</label>
+        <input type="text" class="form-control" name = "parry" id="characterName"  placeholder="Enter Character's name">
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Character Toughness:</label>
+        <input type="text" class="form-control" name = "toughness" id="characterName"  placeholder="Enter Character's name">
+    </div>
+
+ 
+    <div class="form-group">
+        <label for="exampleInputEmail1">Characters Skills</label>
+        <textarea type="text-area" class="form-control" name = "skills" id="characterName" rows = "3" placeholder="Enter Character's name"></textarea>
+    </div>
+
+
+  <div class="form-group">
+        <label for="exampleInputEmail1">Characters Weapons/Powers:</label>
+        <textarea type="text-area" class="form-control" name = "weapons" id="characterName" rows = "3" placeholder="Enter Character's name"></textarea>
+  </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Other Info:</label>
+        <textarea type="text-area" class="form-control" name = "other" id="characterName" rows = "3" placeholder="Enter Character's name"></textarea>
+    </div>
+
     <input type="submit" class="btn btn-primary">
 </form>
