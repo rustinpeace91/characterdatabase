@@ -2,5 +2,4 @@
 
 module.exports = {
   CharSheet: require("./CharSheet"),
-  Library: require("./Library")
 };

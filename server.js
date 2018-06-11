@@ -51,7 +51,29 @@ app.post("/submit", function(req, res) {
         res.json(err);
       });
 });
-  
+ 
+app.delete("/characters/:id"), function(req,res){
+
+    db.CharSheet.deleteOne({_id : req.params.id})
+        .then(function(data){
+            location.reload();
+            res.json(data);
+        })
+        .catch(function(err){
+            res.json(err);
+        });
+}
+
+app.get("/characters/:id"), function(req,res){
+    db.CharSheet.findOne({_id : req.param.id})
+        .then(function(data){
+            location.reload();
+            res.json(data);
+        })
+        .catch(function(err){
+            res.json(err);
+        });
+}
 
 // Route for getting all books from the db
 app.get("/characters", function(req, res) {
@@ -60,12 +82,13 @@ app.get("/characters", function(req, res) {
       .then(function(data) {
         // If any Books are found, send them to the client
         res.json(data);
+        
       })
       .catch(function(err) {
         // If an error occurs, send it back to the client
         res.json(err);
       });
-  });
+});
 
 app.get("/" , function(req,res){
         // Using our Book model, "find" every book in our db
@@ -75,7 +98,6 @@ app.get("/" , function(req,res){
         var hbsObject = {
             characters:data
         }
-        console.log(hbsObject);
         res.render("index", hbsObject)
     })
     .catch(function(err) {

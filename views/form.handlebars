@@ -1,36 +1,37 @@
-<form id = "character-form" action="/submit" method="post">
+<form id = "character-form">
     <div class="form-group">
         <label for="exampleInputEmail1">Character Name:</label>
-        <input type="text" class="form-control" name = "name" id="characterName"  placeholder="Enter Character's name">
+        <input id = "char-name" type="text" class="form-control" name = "name" id="characterName"  placeholder="Enter Character's name">
     </div>
 
     <div class="form-group">
         <label for="exampleInputEmail1">Character Parry:</label>
-        <input type="text" class="form-control" name = "parry" id="characterName"  placeholder="Enter Character's name">
+        <input id = "char-parry" type="text" class="form-control" name = "parry" id="characterName"  placeholder="Enter Character's name">
     </div>
 
 
     <div class="form-group">
         <label for="exampleInputEmail1">Character Toughness:</label>
-        <input type="text" class="form-control" name = "toughness" id="characterName"  placeholder="Enter Character's name">
+        <input id = "char-toughness" type="text" class="form-control" name = "toughness" id="characterName"  placeholder="Enter Character's name">
     </div>
 
  
     <div class="form-group">
         <label for="exampleInputEmail1">Characters Skills</label>
-        <textarea type="text-area" class="form-control" name = "skills" id="characterName" rows = "3" placeholder="Enter Character's name"></textarea>
+        <textarea id = "char-skills" type="text-area" class="form-control" name = "skills" id="characterName" rows = "3" placeholder="Enter Character's name"></textarea>
     </div>
 
 
   <div class="form-group">
         <label for="exampleInputEmail1">Characters Weapons/Powers:</label>
-        <textarea type="text-area" class="form-control" name = "weapons" id="characterName" rows = "3" placeholder="Enter Character's name"></textarea>
+        <textarea id = "char-weapons" type="text-area" class="form-control" name = "weapons" id="characterName" rows = "3" placeholder="Enter Character's name"></textarea>
   </div>
 
     <div class="form-group">
         <label for="exampleInputEmail1">Other Info:</label>
-        <textarea type="text-area" class="form-control" name = "other" id="characterName" rows = "3" placeholder="Enter Character's name"></textarea>
+        <textarea id = "char-other" type="text-area" class="form-control" name = "other" id="characterName" rows = "3" placeholder="Enter Character's name"></textarea>
     </div>
 
-    <input type="submit" class="btn btn-primary">
+    <button id = "submit" class="btn btn-primary">submit</button>
 </form>
+    <button id = "goback" class="btn btn-primary">go back</button>

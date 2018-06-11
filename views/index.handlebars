@@ -6,11 +6,20 @@
 {{#each characters}}
 
   <div class="card">
-    <div class="card-header" id="headingOne">
+    <div class="card-header"  id="headingOne">
       <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#{{name}}" aria-expanded="true" aria-controls="collapseOne">
-          {{name}}
-        </button>
+        <div class = "row" >
+        <div class = "col-6" data-toggle="collapse" data-target="#{{name}}" aria-expanded="true" aria-controls="collapseOne">
+          <button class="btn btn-link" >
+            {{name}}
+          </button>
+        </div>
+        <div class = "col-6">
+          <button class = "delete-char btn btn-primary float-right"  data-id= "{{this.id}}">
+            X
+          </button>
+        </div>
+        </div>
       </h5>
     </div>
 
