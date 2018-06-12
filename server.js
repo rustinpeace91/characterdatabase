@@ -34,7 +34,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + '/public'));
 
-app.post("/submit", function(req, res) {
+app.post("/api/characters", function(req, res) {
     // Create a new Book in the database
     db.CharSheet.create(req.body)
       .then(function(character) {
@@ -52,37 +52,36 @@ app.post("/submit", function(req, res) {
       });
 });
  
-app.delete("/characters/:id"), function(req,res){
+app.delete("/api/characters/:id", function(req,res){
 
     db.CharSheet.deleteOne({_id : req.params.id})
         .then(function(data){
-            location.reload();
             res.json(data);
+            location.reload();
         })
         .catch(function(err){
             res.json(err);
         });
-}
+});
 
-app.get("/characters/:id"), function(req,res){
-    db.CharSheet.findOne({_id : req.param.id})
+app.get("/api/characters/:id", function(req,res){
+    console.log(req.params.id)
+    db.CharSheet.find({_id : req.params.id})
         .then(function(data){
-            location.reload();
             res.json(data);
         })
         .catch(function(err){
             res.json(err);
         });
-}
+});
 
 // Route for getting all books from the db
-app.get("/characters", function(req, res) {
+app.get("/api/characters", function(req, res) {
     // Using our Book model, "find" every book in our db
     db.CharSheet.find({})
       .then(function(data) {
         // If any Books are found, send them to the client
         res.json(data);
-        
       })
       .catch(function(err) {
         // If an error occurs, send it back to the client
@@ -118,8 +117,6 @@ app.get("/form" , function(req,res){
 
 
 app.listen(PORT, function() {
-    
-
     // Log (server-side) when our server has started
     console.log("Server listening on Port" + PORT);
 });

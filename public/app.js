@@ -1,4 +1,4 @@
-$(document).ready(()=>{
+$(document).ready(function(){
 
     $("#submit").on("click", event =>{
         event.preventDefault();
@@ -19,7 +19,7 @@ $(document).ready(()=>{
             weapons: weapons,
             other: other
         }
-        $.ajax('/submit', {
+        $.ajax('/api/characters', {
             type: 'POST',
             data: charObject
         }).then(function(){
@@ -34,17 +34,17 @@ $(document).ready(()=>{
         window.location.href = "/";
     })
 
-    $(".delete-char").click(event => {
-        //alert("yeah");
+
+    $(".delete-char").on("click", function(event) {
         event.preventDefault();
         var id = $(this).data("id");
         console.log(id);
-        // $.ajax('characters/5b1caf9ca47b91288ed68045', {
-        //     type: 'DELETE',
-        //     //data: id
-        // }).then(function(){
-        //     alert("yeah");
-        //     //window.location.href = "/";
-        // })
+        $.ajax('/api/characters/' + id, {
+            type: 'DELETE',
+            //data: id
+        }).then(function(){
+            alert("yeah");
+            //window.location.href = "/";
+        })
     });
 });

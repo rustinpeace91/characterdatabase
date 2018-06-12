@@ -3,8 +3,12 @@
     <p>Welcome to the app</p>
 </div>
 <div id="accordion">
-{{#each characters}}
 
+{{#each characters}}
+    {{!-- <button class = "delete-char" data-id= {{this.id}} >
+    <!---->
+    X
+  </button> --}}
   <div class="card">
     <div class="card-header"  id="headingOne">
       <h5 class="mb-0">
@@ -15,9 +19,12 @@
           </button>
         </div>
         <div class = "col-6">
-          <button class = "delete-char btn btn-primary float-right"  data-id= "{{this.id}}">
-            X
-          </button>
+
+            <button class = "delete-char btn btn-primary float-right" data-id= "{{this.id}}" >
+              <!---->
+              X
+            </button>
+
         </div>
         </div>
       </h5>
