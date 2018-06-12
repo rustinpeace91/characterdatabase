@@ -4,7 +4,6 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new LibrarySchema object
-// This is similar to a Sequelize model
 var CharSheetSchema = new Schema({
     name: {
         type: String,
@@ -15,6 +14,7 @@ var CharSheetSchema = new Schema({
     toughness: {
         type: Number
     },
+    // skills stored in an array
     skills:{
         type: Array
     },
@@ -28,7 +28,8 @@ var CharSheetSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
+
 var CharSheet = mongoose.model("CharSheet", CharSheetSchema);
 
-// Export the Book model
+// Export the Character sheet model
 module.exports = CharSheet;
